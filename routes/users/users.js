@@ -1,6 +1,8 @@
+/* eslint-disable */
 const express = require("express");
 const router = express.Router();
-const Joi = require("joi");
+// const Joi = require("joi");
+const validateUser = require("./userValidate");
 
 const users = [
   { id: 1, name: "Salman" },
@@ -62,13 +64,5 @@ router.delete("/:id", (req, res) => {
   users.splice(index, 1);
   res.send(user);
 });
-
-// validate inputs with JOI
-validateUser = user => {
-  const schema = Joi.object({
-    name: Joi.string().min(3).required(),
-  });
-  return schema.validate(user);
-}
 
 module.exports = router;
