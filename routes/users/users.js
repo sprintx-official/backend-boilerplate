@@ -1,5 +1,4 @@
 /* eslint-disable */
-const winston = require("winston");
 const express = require("express");
 const router = express.Router();
 const validateUser = require("./userValidate");
