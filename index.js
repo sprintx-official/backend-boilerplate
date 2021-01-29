@@ -1,9 +1,7 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 const express = require("express");
 const app = express();
-// eslint-disable-next-line no-undef
 const app_file = require("./App/app");
-// eslint-disable-next-line no-undef
 const dotenv = require("dotenv").config();
 
 app.use("/", app_file);
