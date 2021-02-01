@@ -53,6 +53,10 @@ Call the next middleware function in the stack.
 
 We can also use third party middleware like “morgan”, “helmet” and can easily install e.g., “npm i morgan”.
 
+Error Handling:
+
+I have used Winston for error handling and created 2 file in middleware folder error.js and logger.js. In logger.js I write some Winston code about error level and create a .log file to store error details init and in error.js file error will send to server and Winston. Install it with npm command. “npm i winston”.
+
 Utils:
 
 In this folder we add some reused functions.

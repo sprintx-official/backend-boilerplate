@@ -1,5 +1,6 @@
 /* eslint-disable */
 const express = require("express");
+const winston = require("winston");
 const router = express.Router();
 const validateUser = require("./userValidate");
 
@@ -17,7 +18,11 @@ router.get("/", (req, res) => {
 //HTTP Get Requests
 router.get("/:id", (req, res) => {
   const user = users.find((c) => c.id === parseInt(req.params.id));
-  if (!user) throw new Error("Could not get the given id");
+  if (!user)
+    throw new Error(
+      "Could not get the given id",
+      winston.error("Could not get the given id")
+    );
   // res.status(404).send("The user with the given Id not found.");
   res.send(user);
 });
